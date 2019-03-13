@@ -81,7 +81,7 @@ namespace Xamarin.Forms.Xaml
 								name = new XmlName(reader.NamespaceURI, reader.LocalName);
 
 							if (reader.IsEmptyElement)
-								throw new XamlParseException($"Unexpected empty element '<{reader.Name}/>'", (IXmlLineInfo)reader);
+								Debug.WriteLine($"Unexpected empty element '<{reader.Name} />'", (IXmlLineInfo)reader);
 							var prop = ReadNode(reader);
 							if (prop != null)
 								node.Properties.Add(name, prop);
